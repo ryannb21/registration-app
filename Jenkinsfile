@@ -14,7 +14,7 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('Approval") {
+        stage('Approval') {
               steps {
                   input message: 'Proceed to Deployment?', ok: 'Approve'
               }
