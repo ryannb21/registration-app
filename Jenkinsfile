@@ -14,6 +14,11 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+        stage('Approval") {
+              steps {
+                  input message: 'Proceed to Deployment?', ok: 'Approve'
+              }
+        }
         stage('Continuous Delivery') {
             steps {
                 echo 'DELIVERY IN PROGRESS...'
